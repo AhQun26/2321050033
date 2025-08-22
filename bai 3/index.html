@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3</title>
+</head>
+<body>
+    <marquee>
+        <img src="../images.webp">
+    </marquee>
+    <!-- marquee sẽ cho phép đối tượng trong nó chạy ngang qua màn hình -->
+    <h1>FORM Điền thông tin</h1>
+    <form>
+        <div>
+            <p><b>Họ và tên:</b></p>
+            <input type="text" name="Hovaten" placeholder="Điền họ và tên">
+            <!-- placeholder kiểu như gợi ý điền  -->
+        </div>
+        <div>
+            <p><b>Mã số sinh viên</b></p>
+            <input type="text" name="mssv" value="2321050033" readonly>
+            <!-- value là cấp giá trị mặc định  -->
+            <!-- readonly là để cấm k đc sửa  -->
+        </div>
+        <div>
+            <p><b>Giới thiệu bản thân</b></p>
+            <textarea name="Giới thiệu">Nhập vào giới thiệu.....</textarea>
+            <!-- textarea dùng để tạo ô điền chữ như là điền chú thích, lưu ý ,vvv -->
+        </div>
+        <div>
+            <p><b>Email: </b></p>
+            <input type="email" name="email" placeholder="Dạng @gmail.com">
+            type email chie chấp nhận dạng @gmail.com
+        </div>
+        <div><p><b>Số điện thoại:</b></p>
+            <input type="Sodienthoai" type="tel" placeholder="Dạng số 0x-xxx-xxxxx"
+            required 
+            pattern="([0]{1}([0-9]{1}(-[0-9]{3}(-[0-9]{4}))))">
+            <!-- required là yêu cầu bắt buộc nhập  -->
+             <!-- pattern là kiểu như định dạng mẫu  -->
+        </div>
+        <!--vd yêu cấu số đầu tiên là 0
+            số thứ 2 là 3, 4, 8 hoặc 9
+            8 số sau từ 0 đến 9-->
+        <div>
+            <p><b>VD</b></p>
+            <input type="tel" placeholder="." required 
+            pattern="([0]{1}([3,4,8,9]{1}([0-9]{8})))">
+        </div>
+        <div>
+            <p><b>Gioi tinh</b></p>
+            <input type="radio" name="gioitinh" value="Nam"> Nam <br>
+            <input type="radio" name="gioitinh" value="Nữ"> Nữ <br>
+            <!-- 2 name của 2 input phải giống nhau thi khi tích cái này sẽ tự động bỏ tích cái kia -->
+        </div>
+        <div>
+            <p><b>Sở thích</b></p>
+            Game:<input type="checkbox" name="sothich" value="game"> <br>
+            Music:<input type="checkbox" name="sothich" value="music"> <br>
+            Sport:<input type="checkbox" name="sothich" value="sport"> <br>
+            <!-- checkbox (ô chọn, dùng trong trường hợp muốn chọn nhiều cái 1 lúc ) -->
+        </div>
+        <div>
+            <p><b>Trình duyệt yêu thích</b></p>
+            <select name="browsers">
+                <option value="Internet Exlorer">Internet Exlorer</option>
+                <option value="avc">acv</option>
+                <option value="fgh">fgh</option>
+                <option value="kjh">kjh</option>
+            </select>
+            <!-- select để chọn, option để đưa ra các mục để chọn (chọn 1 trong danh sách) -->
+        </div>
+        <div>
+            0 <input type="range" value="50">100
+            <!-- dùng để chọn số trong khoảng (kéo như âm lượng) -->
+        </div>
+        <div>
+            <p><b>Tuổi</b></p>
+            <input type="number" name="tuoi" step="2">
+            <!-- dùng để chọn số, step là bước nhảy -->
+        </div>
+        <div>
+            <p><b>Ngày tháng năm sinh</b></p>
+            <input type="date" name="ngaythangnamsinh">
+            <!--type date sẽ giúp hiển thị giao diện như lịch để chọn ngày  -->
+        </div>
+        <div>
+            <p><b>Chọn màu sắc:</b></p>
+            <input type="color" name="mausac">
+            <!-- type color giúp hiển thị giao diện chọn màu  -->
+        </div>
+        <div><p><b>Mật khẩu</b></p>
+            <input type="password" name="matkhau">
+            <!-- type password giúp gõ chữ đc che bởi dấu sao -->
+        </div>
+        <br>
+        <div>
+            <input type="submit">
+            <input type="reset">
+        </div>
+    </form>
+    <br>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/qR7vNVU6Beo?si=uhBzgAAWi9yojymZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <!-- lên ytb chọn video chọn chia sẻ lấy mã nhúng gán trực tiếp vào k cần gõ lệnh -->
+    <div>
+        <audio controls>
+            <source src="dhf.mp3" type="audio.mp3">
+        </audio>
+        <!-- đưa audio lên   -->
+    </div>
+     <div>
+        <video controls width="560" height="150">
+            <source src="../WIN_20241031_08_20_54_Pro.mp4" type="video.mp4">
+        </video>
+        <!-- đưa video lên  -->
+     </div>
+     &lth1&gt
+     <!-- các kí tự thay thế (nếu gõ bình thường sẽ là câu lệnh) -->
+</body>
+</html>
