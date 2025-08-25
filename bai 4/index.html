@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4 CSS</title>
+    <style>
+        p{
+            color: pink;
+            background-color: black;
+        }
+        #title{
+            color: orange;
+        }
+        .class{
+            color: brown;
+        }
+        .class2{
+            color:chartreuse;
+        }
+        h2{
+            color: brown;
+            background-color: aqua;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p style="color: blue; font-size: xx-large; background-color: orange;">Inline Style</p>
+    <p>Internal Style</p>
+    <!-- inline style là viết stly trực tiếp, internal style là viết style ở ngoài (viết ở trên head, gọi đến tên thẻ, đc viết trong cặp thẻ style) -->
+    <!-- inline style có độ ưu tiên cao nhất nên tuy cùng tên thẻ là p nhưng inline style vẫn giữ style của nó -->
+    <p id="title">Title</p>
+    <p class="class">class</p>
+    <!-- id thì gọi đến tên thẻ bằng # -->
+    <!-- class gọi tên thẻ bằng . -->
+    <h1 class="class2">class2</h1>
+    <!-- nền của class 2 đc chọn ở ngoài file khác tên là stle.css đã đc link ở trên, link viết ngoài thẻ style -->
+    <h2>Ví dụ về độ ưu tiên</h2>
+    <br>
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+</body>
+</html>
