@@ -1,0 +1,47 @@
+body {
+    margin: 0px;
+}
+ul{
+    display: flex;
+    /* display flex kiểu như 1 dạng tự động chia bố cục */
+    justify-content: center;
+    /* để căn vào giữa (bắt buộc đi kèm display)  */
+    list-style: none;
+    gap: 20px;
+}
+nav{
+    background-color: #0c4ca3;
+    padding: 10px;
+}
+li{
+    padding: 15px;
+}
+
+.border{
+    border-right: 1px solid gray;
+}
+.danhmuc-lienket{
+    color: white;
+    text-decoration: none;
+    font-family: Roboto, Arial, Tahoma;
+}
+.banner-qc{
+    display: flex;
+    justify-content: center;
+    margin: 10px 0px;
+}
+.qc{
+    display: flex;
+    justify-content: space-between;
+}
+header{
+    border-bottom: 15px solid #f1f1f2;
+}
+.tintuc{
+    display: flex;
+    justify-content: center;
+}
+
+.tintuc img {
+    width:80%;
+}
