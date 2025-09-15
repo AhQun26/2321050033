@@ -1,0 +1,32 @@
+body{
+    background-color: rgb(241, 240, 240);
+}
+body img{
+    width: 100%;
+    margin:auto;
+}
+.main{
+    width: 40%;
+    margin: auto;
+    background-color: white;
+    height: 1000vh;
+}
+.top_main{
+    margin-top: 0;
+    text-align: center;
+   border-bottom: 2px solid gray;
+}
+.name{
+    display: flex;
+    justify-content: space-around;
+}
+.name input{
+    width: 200px;
+}
+.ns div{
+    display:flex;
+    justify-content: space-between;
+}
+.ns select{
+   width: 150px;
+}
