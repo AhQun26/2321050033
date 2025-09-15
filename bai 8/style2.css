@@ -1,0 +1,19 @@
+body{
+    background-color: whitesmoke;
+}
+.main{
+    width: 90%;
+    background-color: white;
+    height: 100vh;
+    margin:80px auto;
+    display: flex;
+}
+.anh{
+    width: 50%;
+    text-align: center;
+}
+.taikhoan 
+
+.thongtin{
+    width: 50%;
+}
