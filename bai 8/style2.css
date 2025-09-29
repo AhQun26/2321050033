@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body{
     background-color: whitesmoke;
 }
@@ -16,4 +17,24 @@ body{
 
 .thongtin{
     width: 50%;
+=======
+body{
+    background-color: whitesmoke;
+}
+.main{
+    width: 90%;
+    background-color: white;
+    height: 100vh;
+    margin:80px auto;
+    display: flex;
+}
+.anh{
+    width: 50%;
+    text-align: center;
+}
+.taikhoan 
+
+.thongtin{
+    width: 50%;
+>>>>>>> d28a80dc28b0a241bb60c4556f4629d02d70ea83
 }

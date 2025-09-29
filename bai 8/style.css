@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body{
     background-color: rgb(241, 240, 240);
 }
@@ -29,4 +30,37 @@ body img{
 }
 .ns select{
    width: 150px;
+=======
+body{
+    background-color: rgb(241, 240, 240);
+}
+body img{
+    width: 100%;
+    margin:auto;
+}
+.main{
+    width: 40%;
+    margin: auto;
+    background-color: white;
+    height: 1000vh;
+}
+.top_main{
+    margin-top: 0;
+    text-align: center;
+   border-bottom: 2px solid gray;
+}
+.name{
+    display: flex;
+    justify-content: space-around;
+}
+.name input{
+    width: 200px;
+}
+.ns div{
+    display:flex;
+    justify-content: space-between;
+}
+.ns select{
+   width: 150px;
+>>>>>>> d28a80dc28b0a241bb60c4556f4629d02d70ea83
 }

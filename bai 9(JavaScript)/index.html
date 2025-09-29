@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,4 +68,74 @@
         // parseInt để ép kiểu về kiểu int
     </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="script.js"></script>
+    <script>
+        // để viết chú thích js dùng kí tự "//"
+        document.writeln("hello world" + "<br>");
+
+        // Trong JavaScript để nối chuỗi dùng dấu +
+        let hoTen= "Nguyen Anh Quan"
+        document.writeln(hoTen + "<br>");
+
+        // Hằng
+        const pi= 3.14;
+
+        let soThuNhat=10;
+        let  soThuHai="10";
+        let ketQua=0;
+        //+
+        ketQua= soThuNhat+soThuHai;
+        document.writeln(ketQua)
+        // 2 dấu bằng thì không quan tâm đến kiểu dữ liệu
+        document.writeln(soThuNhat==soThuHai)
+        
+        //thêm 1 dấu bằng thì sẽ xét đến kiểu dữ liệu
+        document.writeln(soThuNhat===soThuHai)
+
+        // thêm dấu ! đằng trc sẽ là phủ định
+        document.writeln(!(soThuNhat==soThuHai))
+
+        let thongTinSinhVien ={
+            hoTen: "Nguyen Anh Quan",
+            tuoi: 20,
+            gioitinh: true,
+            lop: "Khoa hoc may tinh k68"
+        }
+        
+
+        let diaChi = {
+            thanhPho: "Thanh Hóa",
+            quanHuyen:"Vĩnh Lộc",
+            duong: "quoc lo 217",
+            soNha: 15
+        }
+        
+        // gán biến địa chỉ cho 1 key ở trong  thongTinSinhVien
+        thongTinSinhVien.diaChi=diaChi;
+
+        let namNay=2025;
+        document.writeln("<br> Xin chao "
+        + thongTinSinhVien.hoTen 
+        +" lớp "+ thongTinSinhVien.lop 
+        + " nha o " + thongTinSinhVien.diaChi.soNha 
+        +" "+thongTinSinhVien.diaChi.duong 
+        + " năm sinh: " + (namNay - thongTinSinhVien.tuoi) +"<br>")
+        
+        // ép kiểu
+        let soThuBa = "20";
+        soThuBa = parseInt(soThuBa);
+        document.writeln(typeof (soThuBa));
+        // chuoi.length trả về độ dài chuỗi
+    </script>
+</body>
+>>>>>>> d28a80dc28b0a241bb60c4556f4629d02d70ea83
 </html>
