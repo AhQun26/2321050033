@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Mảng
+        let arr=[1,7,2,3,5,2,7,9,2,5,4];
+
+        // kiểm tra có phải kiểu giá trị mảng không
+        document.writeln(Array.isArray(arr));
+
+        // kiểm tra độ dài mảng
+        document.writeln('<br>'+arr.length);
+
+        // truy xuat phan tu
+        document.writeln('<br>'+arr[2]);
+
+        // kiem tra vi tri suat hien dau tien cua x
+        document.writeln('<br>'+arr.indexOf(3))
+
+        // kiem tra vi tri suat hien cuoi cung cua x
+        document.writeln('<br>'+arr.lastIndexOf(5))
+
+        // doi gia tri cua phan tu
+        arr[3]=arr[6]
+        document.writeln('<br>'+arr)
+
+        // Noi mang
+        let a,b,c,d;
+        a=[1,2,3];
+        b="JavaScript";
+        c=[42,"JS"];
+        d=a.concat(b,c);
+        document.writeln('<br>'+d);
+
+        // biến mảng thành chuỗi
+        // tham số bên trong join() là kí tự phân tách(chèn vào giữa các phần tử)
+        d_chuoi=d.join('-');
+        document.writeln('<br>'+d_chuoi)
+
+        // xóa phần tử cuối mảng
+        d.pop();
+        document.writeln('<br>'+d);
+
+        // Thêm phần tử cuối mảng
+        d.push("AhQun")
+        document.writeln('<br>'+d);
+
+        // Đảo lại mảng
+        d.reverse();
+        document.writeln('<br>'+d);
+
+        // xóa phần tử đầu mảng
+        d.shift();
+        document.writeln('<br>'+d);
+
+        // Thêm phần tử vào đầu mảng
+        d.unshift(5);
+        document.writeln('<br>'+d);
+
+    // if() ... else ...
+        let x = 10;
+        if (x%2==0)
+            document.writeln('Số chẵn')
+        else
+            document.writeln('Số lẻ')
+
+        // số quá lớn sẽ bị làm tròn
+        let x2 = "100000000000000000000000000000000000001";
+        let soCuoi= parseInt(x2[x2.length -1])
+        if (soCuoi%2==0)
+            document.writeln('Số chẵn')
+        else
+            document.writeln('Số lẻ')
+
+
+        //
+        let now= new Date().getHours();
+        document.writeln(now)
+        if(now>=5 && now <10)
+            document.writeln('<br> chao buoi sang')
+        else if(now>=10 && now <13)
+            document.writeln('<br> chao buoi trua')
+        else if(now>=13 && now <17)
+            document.writeln('<br> chao buoi chieu')
+        else if(now>=17 && now <22)
+            document.writeln('<br> chao buoi toi')
+        else
+            document.writeln('<br> chao buoi dem')
+
+
+        // 
+    </script>
+</body>
+</html>
+
