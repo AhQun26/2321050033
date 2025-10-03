@@ -94,6 +94,29 @@
 
 
         // 
+
+        let diemA = 8;
+        let diemB = 7;
+        let diemC = 100;
+        let tong = diemA * 0.6 + diemB * 0.3 + diemC * 0.1;
+        document.writeln("Tổng điểm là: " + tong.toFixed(1))
+
+        if (8 < tong && tong <= 10) {
+            document.writeln("Điểm A");
+        }
+        else if (7 < tong && tong <= 8) {
+            document.writeln("Điểm B");
+        }
+
+        else if (5 < tong && tong <= 7) {
+            document.writeln("Điểm C");
+        }
+        else if (4 < tong && tong <= 5) {
+            document.writeln("Điểm D");
+        }
+        else {
+            document.writeln("Điểm F");
+        }
     </script>
 </body>
 </html>

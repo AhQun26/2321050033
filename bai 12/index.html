@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // switch() {}
+        let d = new Date();
+        let theDay= d.getDay()+1;
+        switch(theDay) {
+            case 5: 
+            document.writeln("thu 5");
+            break;
+        case 6: 
+            document.writeln("thu 6");
+            break;
+        case 0: 
+            document.writeln("chu nhat");
+            break;
+        // case 1, case 2 không ghi gì có nghĩa là dùng câu lệnh giống case 3, các case có code trùng nhau có thể dùng cách này cho gọn
+        case 1:
+        case 2:
+        case 3:
+            document.writeln("..............................");
+            break;
+        }
+
+        // for
+        let dem=0;
+        let danhSach = ["Dương Trần Nhật	Anh ", "Dương Vũ	Anh ", "Trần Vũ Hải	Anh ", "Bùi Ngọc	Bích ", "Phạm Quốc	Bình ", "Nguyễn Văn	Chung ", "Hoàng Mạnh	Cường ", "Ngô Hoàng	Dương ", "Phạm Văn	Đại ", "Nguyễn Đình	Đạt ", "Phạm	Đức ", "Vũ Trung	Đức ", "Phạm Hương	Giang ", "Phạm Quang	Hậu ", "Trần Văn	Hiệp ", "Nguyễn Văn	Hoàng ", "Phạm Quốc	Hoàng ", "Phạm Thị	Huế ", "Trần Công	Hùng ", "Đào Thế	Huy ", "Đỗ Quang	Huy ", "Phạm Quang	Huy ", "Phạm Thành	Khang ", "Bùi Văn	Khiêm ", "Nguyễn Tiến	Khởi ", "Đỗ Trung	Kiên ", "Vương Hà	Linh ", "Đào Quang	Lộc ", "Ngô Gia	Lộc ", "Bùi Văn	Mạnh ", "Nguyễn Văn	Mạnh ", "Phan Văn	Mạnh ", "Trương Công	Minh ", "Đỗ Thành	Nam ", "Lê Duy	Nam ", "Nguyễn Hoàng	Nam ", "Nguyễn Anh	Quân ", "Cao Thị Thu	Quyên ", "Phạm Gia	Tài ", "Nguyễn Thị Thanh	Tâm © ", "Nguyễn Đình	Thái ", "Lưu Tiến	Thành ", "Trần Văn	Thành ", "Nguyễn Thị	Thúy ", "Nguyễn Thị	Thúy ", "Bùi Duy	Tiến ", "Nguyễn Văn	Tiến ", "Đỗ Văn	Trung ", "Phạm Đan	Trường ", "Lê Thị Cẩm	Tú ", "Phan Văn	Tuân ", "Cao Thái	Tuấn ", "Nguyễn Duy	Tuấn ", "Nguyễn Huy	Tuấn ", "Thiều Văn	Việt ", "Nguyễn Kiều	Vy"];
+        for( let i=0;i<danhSach.length;i++) {
+            if(danhSach[i].toLowerCase().startsWith("nguyễn")) {
+                document.writeln("<br>"+danhSach[i]);
+                dem++;
+            }
+        }
+        document.writeln("<br>"+dem);
+
+        // while
+
+        let i=0;
+        while(i<=10)
+        {
+            document.write("<br>.........")
+            i++
+        }
+        
+        // alert("hello")
+    // alert dùng để nảy ra thông váo khi vào trang
+
+        // let result =confirm("sdfsdfsdfds")
+        // if(result)
+        //     document.writeln("Bấm OK")
+        // else
+        //     document.writeln("Bấm Cancel")
+
+
+        let result= prompt("Nhập họ tên:","Ví dụ: ABC");
+        document.writeln(result)
+
+
+        // function + tên hàm() {
+        //     code logic....
+        // }
+
+        function sayHello(){
+            document.writeln("<br>xin chao")
+        }
+        sayHello();
+
+        let ten= prompt("Nhập họ tên:","Ví dụ: ABC");
+        let namSinh= prompt("Nhập họ tên:","Ví dụ: ABC");
+        function sayHello2(ten, namSinh){
+            document.writeln("<br>xin chao"+ ten +" "+" sinh nam"+namSinh)
+        }
+        sayHello2(ten, namSinh);
+    </script>
+</body>
+</html>
