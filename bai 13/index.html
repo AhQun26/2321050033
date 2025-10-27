@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1>Tính tổng</h1>
+    <div>
+        <p>Nhập số thứ nhất</p>
+        <input type="number" id="soThuNhat">
+    </div>
+    <div>
+        <p>Nhập số thứ hai</p>
+        <input type="number" id="soThuHai">
+    </div>
+    <div>
+        <button onclick="tinhTong()">Tính tổng</button>
+    </div>
+    <div>
+        <p>Kết quả</p>
+        <input type="number" id="ketQua" class="ketQua">
+    </div> -->
+
+    <div>
+        <p>Nhập điểm A</p>
+        <input type="number" id="A">
+    </div>
+    <div>
+        <p>Nhập điểm B</p>
+        <input type="number" id="B">
+    </div>
+    <div>
+        <p>Nhập điểm C</p>
+        <input type="number" id="C">
+    </div>
+    <div>
+        <button onclick="tinhDiem()">Tính điểm</button>
+    </div>
+    <div>
+        <p>Kết quả</p>
+        <input type="text" id="kq">
+    </div>
+
+    <script>
+        // let ten= prompt("Nhap ten");
+        // // document.writeln(ten); 
+        // function inten(){
+        //     document.writeln(ten);
+        // }
+        // inten();
+
+        // let so = parseInt(prompt("Nhập số"));
+        // if (!so){
+        //     document.writeln("vui lòng nhập vào 1 số")
+        // }
+        // function xinChao(so){
+        //     for(i=0;i<so;i++){
+        //         document.writeln("<br>xin chao")
+        //     }
+        // }
+        // xinChao(so);
+
+        // function tinhTong(){
+        //     let soThuNhat = Number(document.getElementById("soThuNhat").value);
+        //     let soThuHai = parseFloat(document.getElementById("soThuHai").value);
+        //     let canhBao="";
+        //     if(!soThuNhat){
+        //         canhBao += " Vui lòng nhập số thứ nhất "
+        //     }
+        //     if(!soThuHai){
+        //         canhBao += " Vui lòng nhập số thứ hai "
+        //     }
+        //     if(canhBao){
+        //         alert(canhBao)
+        //     }
+        //     let tong= soThuNhat+soThuHai;
+        //     document.getElementById("ketQua").value=tong;
+        // }
+        // tinhTong()
+
+        function tinhDiem(){
+            let A = parseFloat(document.getElementById("A").value);
+            let B = parseFloat(document.getElementById("B").value);
+            let C = parseFloat(document.getElementById("C").value);
+
+            let canhBao =""
+            if(!A || A<0 || A>10){
+                canhBao += " Vui lòng nhập lại điểm A "
+            }
+            if(!B || B<0 || B>10){
+                canhBao += " Vui lòng nhập lại điểm B "
+            }
+            if(!C ||C<0 || C>10){
+                canhBao += " Vui lòng nhập lại điểm C "
+            }
+            if(canhBao){
+                alert(canhBao)
+                return;
+            }
+            let tong = A * 0.6 + B * 0.3 + C * 0.1;
+            diemChu="";
+            if (8 < tong && tong <= 10) {
+                diemChu +="A";
+            }
+            else if (7 < tong && tong <= 8) {
+                diemChu +="B";
+            }
+
+            else if (5 < tong && tong <= 7) {
+                diemChu +="C";
+            }
+            else if (4 < tong && tong <= 5) {
+                diemChu +="D";
+            }
+            else {
+                diemChu +="F";
+            }
+            document.getElementById("kq").value=diemChu;
+        }
+    </script>
+</body>
+</html>
