@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- <h1>Tính tổng</h1>
+    <h1>Tính tổng</h1>
     <div>
         <p>Nhập số thứ nhất</p>
         <input type="number" id="soThuNhat">
@@ -15,14 +15,27 @@
         <p>Nhập số thứ hai</p>
         <input type="number" id="soThuHai">
     </div>
-    <div>
+    <!-- <div>
         <button onclick="tinhTong()">Tính tổng</button>
+    </div> -->
+    <div>
+        <button onclick="tinhToan('cong')">Tính Toán</button>
+    </div>
+     <div>
+        <button onclick="tinhToan('tru')">Tính Toán</button>
+    </div>
+      <div>
+        <button onclick="tinhToan('nhan')">Tính Toán</button>
+    </div>
+      <div>
+        <button onclick="tinhToan('chia')">Tính Toán</button>
     </div>
     <div>
         <p>Kết quả</p>
         <input type="number" id="ketQua" class="ketQua">
-    </div> -->
+    </div>
 
+    <!-- tính điểm -->
     <div>
         <p>Nhập điểm A</p>
         <input type="number" id="A">
@@ -62,23 +75,34 @@
         // }
         // xinChao(so);
 
-        // function tinhTong(){
-        //     let soThuNhat = Number(document.getElementById("soThuNhat").value);
-        //     let soThuHai = parseFloat(document.getElementById("soThuHai").value);
-        //     let canhBao="";
-        //     if(!soThuNhat){
-        //         canhBao += " Vui lòng nhập số thứ nhất "
-        //     }
-        //     if(!soThuHai){
-        //         canhBao += " Vui lòng nhập số thứ hai "
-        //     }
-        //     if(canhBao){
-        //         alert(canhBao)
-        //     }
-        //     let tong= soThuNhat+soThuHai;
-        //     document.getElementById("ketQua").value=tong;
-        // }
-        // tinhTong()
+        function tinhToan(phepTinh){
+            let soThuNhat = Number(document.getElementById("soThuNhat").value);
+            let soThuHai = parseFloat(document.getElementById("soThuHai").value);
+            let canhBao="";
+            if(!soThuNhat){
+                canhBao += " Vui lòng nhập số thứ nhất "
+            }
+            if(!soThuHai){
+                canhBao += " Vui lòng nhập số thứ hai "
+            }
+            if(canhBao){
+                alert(canhBao)
+            }
+            let ketQua=0;
+            if(phepTinh=='cong'){
+                ketQua=soThuNhat+soThuHai
+            }
+            else if(phepTinh=='tru'){
+                ketQua=soThuNhat-soThuHai
+            }
+            else if(phepTinh=='nhan'){
+                ketQua=soThuNhat*soThuHai
+            }
+            else{
+                ketQua=soThuNhat/soThuHai
+            }
+            document.getElementById('ketQua').value=ketQua;
+        }
 
         function tinhDiem(){
             let A = parseFloat(document.getElementById("A").value);

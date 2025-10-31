@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* bai1 */
+        /* .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        } */
+        
+    </style>
+</head>
+<body>
+
+    <!-- bai1 -->
+    <!-- <div class="container">
+        <h1>Ví dụ về thay đổi chế độ</h1>
+        <div>
+            <img class="anh" src="../images.webp" alt="">
+        </div>
+        <div>
+            <h1>Chế độ sáng</h1>
+        </div>
+        <div>
+            <button onclick="doiCheDo()"> Thay đổi độ sáng</button>
+        </div> -->
+
+
+        <!-- bai 2 -->
+        <div class="BMI">
+            <div>
+                <p>Chiều cao</p>
+                <input type="number" id="height">
+            <div>
+                <p>Cân nặng</p>
+                <input type="number" id="weight">
+            </div>
+                <button onclick="tinhbmi()">kiểm tra BMI</button>
+            </div>
+            <div>
+                <img class="img" src="" alt="">
+            </div>
+        </div>
+    </div>
+    <script>
+
+        // bai1
+        // let cheDo= true;
+        // function doiCheDo(){
+        //     if(cheDo==true){
+        //         document.getElementsByTagName('div')[0].style= "background-color: black";
+        //         document.getElementsByTagName('h1')[0].style="color: yellow";
+        //         document.getElementsByTagName('h1')[1].style="color: white";
+        //         document.getElementsByTagName('h1')[1].innerHTML= "Chế độ tối";
+        //         document.getElementsByClassName('anh')[0].src= "../bai 5/logo.jpg" 
+        //         cheDo= false;
+        //     }
+        //     else{
+        //         document.getElementsByTagName('div')[0].style= "background-color: white";
+        //         document.getElementsByTagName('h1')[0].style="color: black";
+        //         document.getElementsByTagName('h1')[1].style="color: black";
+        //         document.getElementsByTagName('h1')[1].innerHTML= "Chế độ sangs";
+        //         document.getElementsByClassName('anh')[0].src= "../images.webp" 
+        //         cheDo= true;
+        //     }
+        // }
+
+
+        // bai 2
+        function tinhbmi(){
+            let height= document.getElementById('height').value;
+            let weight= document.getElementById("weight").value;
+            let ketQua= weight/(height * height);
+
+            let canhBao =""
+            if(!height){
+                canhBao += " Vui lòng nhập lại chiều cao "
+            }
+            if(!weight){
+                canhBao += " Vui lòng nhập lại cân nặng "
+            }
+            if(canhBao){
+                alert(canhBao)
+                return;
+            }
+            if (ketQua<18.5){
+                document.getElementsByClassName('img')[0].src="./18.5.jpg"
+            }
+            else if (ketQua>=18.5 && ketQua<25){
+                document.getElementsByClassName('img')[0].src="./18.5-25.jpg"
+            }
+            else if (ketQua>25&& ketQua<30){
+                document.getElementsByClassName('img')[0].src="./25-30.jpg"
+            }
+            else if (ketQua>=30 && ketQua<40){
+                document.getElementsByClassName('img')[0].src="./30-40.jpg"
+            }
+            else{
+                document.getElementsByClassName('img')[0].src="./40-.jpg"
+            }
+        }
+    </script>
+</body>
+</html>
