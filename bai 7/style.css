@@ -1,0 +1,164 @@
+body{
+    background-color: rgba(0, 0, 0, 0.926);
+    color: white;
+    margin: 0;
+}
+header{
+    background-color: black;
+    width: 100%;
+    height: 10vh;
+}
+.container{
+    width: 75%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    
+}
+.container img{
+    width: 90px;
+    margin-top: 10px;
+}
+ul{
+    display: flex;
+    align-items: center;
+}
+ul{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+li{
+    margin-right: 20px;
+}
+.icon{
+    display: flex;
+    align-items: center;
+}
+.icon a{
+    margin-left: 10px ;
+}
+.muagoi{
+    padding: 10px;
+    background-color: red;
+    border-radius: 7px;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+main{
+    width: 75%;
+    background-color:rgba(0, 0, 0, 0);
+    color: white;
+    height: auto;
+    margin: auto;
+    border-bottom: 2px solid grey;
+}
+.top_main img{
+    width: 100%;
+    margin-bottom: 7px;
+    border-radius: 5px;
+}
+.ngang {
+    margin: 45px 0;
+}
+.phim_ngang{
+    display: flex;
+    font-size: 20px;
+}
+.ngang img{
+    width: 95%;
+    display: block;
+    border-radius: 5px;
+}
+.mini {
+    margin: 45px 0;
+}
+.phim_mini{
+    display: flex;
+    font-size: 20px;
+}
+.mini img{
+    width: 95%;
+    display: block;
+    border-radius: 5px;
+}
+.doc {
+    margin: 45px 0;
+}
+.phim_doc{
+    display: flex;
+    font-size: 20px;
+}
+.doc img{
+    width: 95%;
+    display: block;
+    border-radius: 5px;
+}
+.danhmuc_icon{
+    display: flex;
+    margin: 45px 0;
+}
+.truyenhinh{
+    padding: 45px;
+    background-color: aqua;
+    margin-right:20px ;
+    border-radius: 5px;
+}
+.tructiep{
+    padding: 45px;
+    background-color: red;
+    margin-right:20px ;
+    border-radius: 5px;
+}
+.truyenhinh a{
+    display: block;
+}
+footer{
+    width: 75%;
+    margin: auto;
+}
+.lienhe{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+    border-bottom: 2px solid gray;
+}
+.doitac{
+    width: 20%;
+    margin-bottom: 20px;
+}
+.doitac img{
+    width: 120px;
+    display: block;
+}
+.lhfpt ul{
+    display: block;
+}
+.phone{
+    width: 15%;
+    display: block;
+}
+.mxh {
+    display: flex;
+    gap: 20px;
+}
+.thongtin{
+    display: flex;
+}
+.thongtin_text{
+    width: 80%;
+    margin-bottom: 30px;
+    color: rgba(247, 246, 244, 0.684);
+    font-size: 15px;
+}
+.thongtin_icon{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    color: gray;
+}
