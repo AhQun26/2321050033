@@ -1,7 +1,7 @@
 body {
     margin: 0px;
 }
-ul{
+ul.title{
     display: flex;
     /* display flex kiểu như 1 dạng tự động chia bố cục */
     justify-content: center;
@@ -37,11 +37,47 @@ li{
 header{
     border-bottom: 15px solid #f1f1f2;
 }
+table{
+    margin: auto;
+}
+table a{
+    text-decoration: none;
+    color: black;
+}
 .tintuc{
+   border-bottom: 3px solid blue; 
+}
+.xthem{
+    border-bottom: 3px solid gray;
+}
+.video{
+    margin: auto;
+    color: white;
+    background-color: black;
+}
+.video a{
+    color: white;
+}
+.doitac{
+    margin: auto;
     display: flex;
     justify-content: center;
 }
-
-.tintuc img {
-    width:80%;
+.right a{
+    text-decoration: none;
+    color: white;
+}
+.right li{
+    list-style: none;
+}
+.doitac{
+    color: white;
+    background-color: black;
+    width: 80%;
+}
+.left{
+    border: 1px dotted white;
+}
+.title_video{
+    border-bottom: 1px dotted white;
 }

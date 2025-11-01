@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 body{
     background-color:black;
 }
@@ -64,4 +65,39 @@ a{
     width: 30%;
     background-color: rgba(215, 204, 204, 0.153);;
     border-radius: 5px;
+=======
+body{
+    background-color:green;
+}
+.top_page{
+    display: flex;
+}
+.toi_lui{
+    width: 10%;
+}
+.timkiem{
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    gap: 10px; 
+}
+.tai_khoan{
+    width: 20%;
+    display: flex;
+    justify-content: right;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.left{
+    width: 30%;
+    display: flex;
+}
+.mid{
+    width: 40%;
+}
+.right{
+    width: 30%;
+>>>>>>> Stashed changes
 }

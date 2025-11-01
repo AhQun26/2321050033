@@ -12,6 +12,26 @@
         align-items: center;
         } */
         
+
+        /* bài 2 */
+        body{
+            display: flex;
+            justify-content: center;
+        }
+        .BMI{
+            width: 30%;
+            margin-top: 100px;
+            display: flex;
+            justify-content: space-around;
+            padding: 25px 5px;
+            background-color: rgb(153, 210, 229);
+            border-radius: 30px;
+        }
+        .thongso{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
     </style>
 </head>
 <body>
@@ -32,20 +52,24 @@
 
         <!-- bai 2 -->
         <div class="BMI">
-            <div>
-                <p>Chiều cao</p>
-                <input type="number" id="height">
-            <div>
-                <p>Cân nặng</p>
-                <input type="number" id="weight">
-            </div>
-                <button onclick="tinhbmi()">kiểm tra BMI</button>
+            <div class="thongso">
+                <div>
+                    <p>Chiều cao</p>
+                    <input type="number" id="height">
+                </div>
+                <div>
+                    <p>Cân nặng</p>
+                    <input type="number" id="weight">
+                </div>
+                <br><br>
+                <div>
+                    <button onclick="tinhbmi()">kiểm tra BMI</button>
+                </div>
             </div>
             <div>
                 <img class="img" src="" alt="">
             </div>
         </div>
-    </div>
     <script>
 
         // bai1
@@ -72,8 +96,8 @@
 
         // bai 2
         function tinhbmi(){
-            let height= document.getElementById('height').value;
-            let weight= document.getElementById("weight").value;
+            let height= parseFloat(document.getElementById('height').value);
+            let weight= parseFloat(document.getElementById("weight").value);
             let ketQua= weight/(height * height);
 
             let canhBao =""
