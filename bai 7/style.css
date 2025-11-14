@@ -80,6 +80,7 @@ main{
 .phim_mini{
     display: flex;
     font-size: 20px;
+    font-size: 18px;
 }
 .mini img{
     width: 95%;
@@ -161,4 +162,29 @@ footer{
     justify-content: center;
     gap: 20px;
     color: gray;
+}
+.top_main {
+  position: relative;
+}
+#thongTinPhim {
+  position: absolute;
+  bottom: 40px;
+  left: 50px;
+  background: rgba(0, 0, 0,0.3);
+  color:white;
+  font-size: 20px;
+  width: 95%;
+  display: flex;
+  gap: 50px;
+  border-radius: 10px;
+}
+#xem{
+    padding: 8px;
+    background-color: red;
+    border-radius: 10px;
+}
+#trailer{
+    padding: 8px;
+    background-color: red;
+    border-radius: 10px;
 }
