@@ -3,7 +3,7 @@
     # lưu ở phía người dùng
     # dùng cho những thông tin ít quan trọng
     $cookieName = "user";
-    $cookieValue = "CamTu";
+    $cookieValue = "AhQun";
 
     setcookie($cookieName, $cookieValue, time() + (86400), "/"); // 86400 =
 
@@ -17,7 +17,7 @@
     // session 
     # thông tin đăng nhập, giỏ hàng
     session_start(); // bắt buộc phải có
-    $_SESSION['name'] = "CamTu 123";
+    $_SESSION['name'] = "AhQun 123";
     echo $_SESSION['name'];
 
 ?>

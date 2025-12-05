@@ -31,14 +31,28 @@
         // echo $matKhau . "<br>";
 
         // nếu tên đăng nhập = admin và mật khẩu = 123 thì cho phép người dùng vào trang trang chủ
+        include('connect.php');
         if(isset($_POST['username']) && isset($_POST['password'])) {
             $tenDangNhap = $_POST['username']; 
             $matKhau = $_POST['password'];
-            if($tenDangNhap == "admin" && $matKhau == "123") {
-                header('Location: trangchu.php'); //chuyển hướng trang
-            } else {
-                echo "<; class='warning'> Đăng nhập thất bại! </p>";
+
+            $sql ="select * from nguoi_dung where ten_dang_nhap = '$tenDangNhap' and mat_khau = '$matKhau'";
+
+            $result = mysqli_query($conn, $sql);
+
+            if (mysqli_num_rows($result) > 0) {
+                session_start();
+                $_SESSION["username"]=$tenDangNhap;
+                header('location: trangchu.php');
             }
+            else{
+                echo "<p class='warning'> sai thong tin dang nhap! </p>";
+            }
+            // if($tenDangNhap == "admin" && $matKhau == "123") {
+            //     header('Location: trangchu.php'); //chuyển hướng trang
+            // } else {
+            //     echo "<; class='warning'> Đăng nhập thất bại! </p>";
+            // }
         }
     ?>
     
