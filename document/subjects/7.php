@@ -7,10 +7,6 @@
 </head>
 
 <body>
-    <?php
-      include("index.php");
-      $keyword=$_POST['keyword'];
-    ?>
     <div class="header">
         <div href="" class="header_logo">
             <img src="../../../assets/icons/logo.svg" width="40px">
@@ -18,7 +14,7 @@
         </div>
         <div class="header_feature">
             <div class="header_feature_search">
-                <form action="search.php" onsubmit="return checkSubmit()" method="post">
+                <form action="search.php" onsubmit="return checkSubmit()">
                     <div class="header_feature_search_input">
                         <input type="text" placeholder="Search documents..." id="search" name="keyword">
                         <button>
@@ -90,7 +86,7 @@
                 <div class="document_main">
                     <?php 
                         $sql_recent="SELECT d.* ,s.name as 'ten_mon', u.name as 'ten_user' FROM subjects s JOIN documents d ON s.id = d.subject_id JOIN users u ON d.user_id = u.id
-                        WHERE d.title LIKE '%$keyword%' ORDER BY created_at DESC LIMIT 4;";
+                        where s.id =7 ORDER BY created_at DESC LIMIT 4;";
                         $result_recent= mysqli_query($conn,$sql_recent);
                         while($row_recent= mysqli_fetch_array($result_recent)){
                     ?>
@@ -118,12 +114,19 @@
                 <div class="document_topleft">
                         <h1>Popular Documents</h1>
                         <p><font color="#757575">Most downloaded files</font></p>
+                        <!-- <div>
+                            <button href="" class="all">All</button>
+                            <button href="" class="PDF">PDF</button>
+                            <button href="" class="Slides">Slides</button>
+                            <button href="" class="Exams">Exams</button>
+                            <button href="" class="Notes">Notes</button>
+                        </div> -->
                 </div>
                 <a href="detail.php">
                     <div class="document_main">
                         <?php 
                             $sql_popular="SELECT d.* ,s.name as 'ten_mon', u.name as 'ten_user' FROM subjects s JOIN documents d ON s.id = d.subject_id JOIN users u ON d.user_id = u.id
-                            WHERE d.title LIKE '%$keyword%' ORDER BY download_count DESC LIMIT 4;";
+                            where s.id =7 ORDER BY download_count DESC LIMIT 4;";
                             $result_popular= mysqli_query($conn,$sql_popular);
                             while($row_popular= mysqli_fetch_array($result_popular)){
                         ?>
@@ -150,11 +153,18 @@
                 <div class="document_topleft">
                         <h1>Top Views</h1>
                         <p><font color="#757575">Most viewed documents</font></p>
+                        <!-- <div>
+                            <button href="" class="all">All</button>
+                            <button href="" class="PDF">PDF</button>
+                            <button href="" class="Slides">Slides</button>
+                            <button href="" class="Exams">Exams</button>
+                            <button href="" class="Notes">Notes</button>
+                        </div> -->
                 </div>
                 <div class="document_main">
                     <?php 
                         $sql_view="SELECT d.* ,s.name as 'ten_mon', u.name as 'ten_user' FROM subjects s JOIN documents d ON s.id = d.subject_id JOIN users u ON d.user_id = u.id
-                        WHERE d.title LIKE '%$keyword%' ORDER BY view_count DESC LIMIT 4;";
+                        where s.id =7 ORDER BY view_count DESC LIMIT 4;";
                         $result_view= mysqli_query($conn,$sql_view);
                         while($row_view= mysqli_fetch_array($result_view)){
                     ?>
@@ -186,7 +196,7 @@
                 <div class="document_main">
                     <?php 
                         $sql_recent="SELECT d.* ,s.name as 'ten_mon', u.name as 'ten_user' FROM subjects s JOIN documents d ON s.id = d.subject_id JOIN users u ON d.user_id = u.id
-                        WHERE d.title LIKE '%$keyword%' ORDER BY download_count DESC LIMIT 4;";
+                        where s.id =7 ORDER BY download_count DESC LIMIT 4;";
                         $result_recent= mysqli_query($conn,$sql_recent);
                         while($row_recent= mysqli_fetch_array($result_recent)){
                     ?>
