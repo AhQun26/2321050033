@@ -9,13 +9,6 @@
 <body>
     <?php
         include('index.php');
-        if(!isset($_GET['page'])){
-           $page=1; 
-        } 
-        else{
-            $page =$_GET['page'];
-        }
-        $offset = ($page - 1) * 4;
     ?>
     <div class="header">
         <div href="" class="header_logo">
@@ -24,7 +17,7 @@
         </div>
         <div class="header_feature">
             <div class="header_feature_search">
-                <form action="search.php" onsubmit="return checkSubmit()" method="post">
+                <form action="search.php" onsubmit="return checkSubmit()" method="get">
                     <div class="header_feature_search_input">
                         <input type="text" placeholder="Search documents..." id="search" name="keyword">
                         <button>

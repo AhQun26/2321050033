@@ -8,8 +8,11 @@
 
 <body>
     <?php
-      include("index.php");
-      $keyword=$_POST['keyword'];
+        include("index.php");
+        $keyword = '';
+        if (isset($_GET['keyword'])) {
+            $keyword = $_GET['keyword'];
+        }
     ?>
     <div class="header">
         <div href="" class="header_logo">
@@ -18,7 +21,7 @@
         </div>
         <div class="header_feature">
             <div class="header_feature_search">
-                <form action="search.php" onsubmit="return checkSubmit()" method="post">
+                <form action="search.php" onsubmit="return checkSubmit()" method="get">
                     <div class="header_feature_search_input">
                         <input type="text" placeholder="Search documents..." id="search" name="keyword">
                         <button>
@@ -54,7 +57,7 @@
             <nav>
                 <ul  class="main_left_category">
                     <li><a class="" href=""><i class="fa-regular fa-house"></i> Home</a></li>
-                    <li><a class="" href=""><i class="fa-regular fa-folder"></i> My Documents</a></li>
+                    <li><a class="" href="../user/my_documents.php"><i class="fa-regular fa-folder"></i> My Documents</a></li>
                     <li><a class="" href=""><i class="fa-regular fa-star"></i> Favorites</a></li>
                     <li><a class="" href=""><i class="fa-regular fa-clock"></i> Recent</a></li>
                     <li><a class="" href=""><i class="fa-solid fa-users"></i> Shared with me</a></li>
@@ -80,17 +83,19 @@
                             <button href="" class="Notes">Notes</button>
                         </div>
                     </div>
+                    <a href="../user/upload.php">
                     <div class="document_topright">
                         <button href="">
                             <i class="fa-solid fa-upload"></i>
                             Upload Document
                         </button>
                     </div>  
+                    </a>
                 </div>
                 <div class="document_main">
                     <?php 
                         $sql_recent="SELECT d.* ,s.name as 'ten_mon', u.name as 'ten_user' FROM subjects s JOIN documents d ON s.id = d.subject_id JOIN users u ON d.user_id = u.id
-                        WHERE d.title LIKE '%$keyword%' ORDER BY created_at DESC LIMIT 4;";
+                        WHERE d.title LIKE '%$keyword%' ORDER BY created_at DESC LIMIT 4 OFFSET $offset;";
                         $result_recent= mysqli_query($conn,$sql_recent);
                         while($row_recent= mysqli_fetch_array($result_recent)){
                     ?>
@@ -123,7 +128,7 @@
                     <div class="document_main">
                         <?php 
                             $sql_popular="SELECT d.* ,s.name as 'ten_mon', u.name as 'ten_user' FROM subjects s JOIN documents d ON s.id = d.subject_id JOIN users u ON d.user_id = u.id
-                            WHERE d.title LIKE '%$keyword%' ORDER BY download_count DESC LIMIT 4;";
+                            WHERE d.title LIKE '%$keyword%' ORDER BY download_count DESC LIMIT 4 OFFSET $offset;";
                             $result_popular= mysqli_query($conn,$sql_popular);
                             while($row_popular= mysqli_fetch_array($result_popular)){
                         ?>
@@ -154,7 +159,7 @@
                 <div class="document_main">
                     <?php 
                         $sql_view="SELECT d.* ,s.name as 'ten_mon', u.name as 'ten_user' FROM subjects s JOIN documents d ON s.id = d.subject_id JOIN users u ON d.user_id = u.id
-                        WHERE d.title LIKE '%$keyword%' ORDER BY view_count DESC LIMIT 4;";
+                        WHERE d.title LIKE '%$keyword%' ORDER BY view_count DESC LIMIT 4 OFFSET $offset;";
                         $result_view= mysqli_query($conn,$sql_view);
                         while($row_view= mysqli_fetch_array($result_view)){
                     ?>
@@ -186,7 +191,7 @@
                 <div class="document_main">
                     <?php 
                         $sql_recent="SELECT d.* ,s.name as 'ten_mon', u.name as 'ten_user' FROM subjects s JOIN documents d ON s.id = d.subject_id JOIN users u ON d.user_id = u.id
-                        WHERE d.title LIKE '%$keyword%' ORDER BY download_count DESC LIMIT 4;";
+                        WHERE d.title LIKE '%$keyword%' ORDER BY download_count DESC LIMIT 4 OFFSET $offset;";
                         $result_recent= mysqli_query($conn,$sql_recent);
                         while($row_recent= mysqli_fetch_array($result_recent)){
                     ?>
@@ -208,15 +213,21 @@
                     </a>
                     <?php } ?>
                 </div>
-                <!-- <div class="pagination">
-                    <a class="page_prev">« Prev</a>
-                    <a class="page_number">1</a>
-                    <a class="page_number">2</a>
-                    <a class="page_number">3</a>
-                    <a class="page_number">4</a>
-                    <a class="page_number">5</a>
-                    <a class="page_next">Next »</a>
-                </div> -->
+                <div class="pagination">
+                    <?php 
+                        $sql_page= "SELECT COUNT(id) as 'count' FROM documents WHERE title LIKE '%$keyword%';";
+                        $result_page = mysqli_query($conn,$sql_page);
+                        $count= mysqli_fetch_assoc($result_page);
+                        $page_total= ceil($count['count'] / 4); 
+                    ?>
+                     <?php if ($page > 1){ ?>
+                        <a class="page_prev" href="?keyword=<?php echo $keyword ?>&page=<?php echo $page - 1 ?>">« Prev</a>
+                    <?php } ?>
+                    <a class="page_number"><?php echo $page ?></a>
+                    <?php if ($page < $page_total){ ?>
+                        <a class="page_next" href="?keyword=<?php echo $keyword ?>&page=<?php echo $page + 1 ?>">Next »</a>
+                    <?php } ?>
+                </div>
             </div>
         </div>       
     </div>

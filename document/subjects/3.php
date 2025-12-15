@@ -14,7 +14,7 @@
         </div>
         <div class="header_feature">
             <div class="header_feature_search">
-                <form action="search.php" onsubmit="return checkSubmit()">
+                <form action="search.php" onsubmit="return checkSubmit()" method="get">
                     <div class="header_feature_search_input">
                         <input type="text" placeholder="Search documents..." id="search" name="keyword">
                         <button>
@@ -50,7 +50,7 @@
             <nav>
                 <ul  class="main_left_category">
                     <li><a class="" href=""><i class="fa-regular fa-house"></i> Home</a></li>
-                    <li><a class="" href=""><i class="fa-regular fa-folder"></i> My Documents</a></li>
+                    <li><a class="" href="../user/my_documents.php"><i class="fa-regular fa-folder"></i> My Documents</a></li>
                     <li><a class="" href=""><i class="fa-regular fa-star"></i> Favorites</a></li>
                     <li><a class="" href=""><i class="fa-regular fa-clock"></i> Recent</a></li>
                     <li><a class="" href=""><i class="fa-solid fa-users"></i> Shared with me</a></li>
@@ -76,17 +76,19 @@
                             <button href="" class="Notes">Notes</button>
                         </div>
                     </div>
+                    <a href="../user/upload.php">
                     <div class="document_topright">
-                        <button href="">
+                        <button>
                             <i class="fa-solid fa-upload"></i>
                             Upload Document
                         </button>
-                    </div>  
+                    </div>
+                    </a>  
                 </div>
                 <div class="document_main">
                     <?php 
                         $sql_recent="SELECT d.* ,s.name as 'ten_mon', u.name as 'ten_user' FROM subjects s JOIN documents d ON s.id = d.subject_id JOIN users u ON d.user_id = u.id
-                        where s.id =3 ORDER BY created_at DESC LIMIT 4;";
+                        where s.id =3 ORDER BY created_at DESC LIMIT 4 OFFSET $offset;";
                         $result_recent= mysqli_query($conn,$sql_recent);
                         while($row_recent= mysqli_fetch_array($result_recent)){
                     ?>
@@ -125,8 +127,10 @@
                 <a href="detail.php">
                     <div class="document_main">
                         <?php 
-                            $sql_popular="SELECT d.* ,s.name as 'ten_mon', u.name as 'ten_user' FROM subjects s JOIN documents d ON s.id = d.subject_id JOIN users u ON d.user_id = u.id
-                            where s.id =3 ORDER BY download_count DESC LIMIT 4;";
+                            $sql_popular="SELECT d.* ,s.name as 'ten_mon', u.name as 'ten_user' 
+                            FROM subjects s JOIN documents d ON s.id = d.subject_id 
+                            JOIN users u ON d.user_id = u.id where s.id =3 ORDER BY download_count DESC 
+                            LIMIT 4 OFFSET $offset;";
                             $result_popular= mysqli_query($conn,$sql_popular);
                             while($row_popular= mysqli_fetch_array($result_popular)){
                         ?>
@@ -153,18 +157,11 @@
                 <div class="document_topleft">
                         <h1>Top Views</h1>
                         <p><font color="#757575">Most viewed documents</font></p>
-                        <!-- <div>
-                            <button href="" class="all">All</button>
-                            <button href="" class="PDF">PDF</button>
-                            <button href="" class="Slides">Slides</button>
-                            <button href="" class="Exams">Exams</button>
-                            <button href="" class="Notes">Notes</button>
-                        </div> -->
                 </div>
                 <div class="document_main">
                     <?php 
                         $sql_view="SELECT d.* ,s.name as 'ten_mon', u.name as 'ten_user' FROM subjects s JOIN documents d ON s.id = d.subject_id JOIN users u ON d.user_id = u.id
-                        where s.id =3 ORDER BY view_count DESC LIMIT 4;";
+                        where s.id =3 ORDER BY view_count DESC LIMIT 4 OFFSET $offset;";
                         $result_view= mysqli_query($conn,$sql_view);
                         while($row_view= mysqli_fetch_array($result_view)){
                     ?>
@@ -196,7 +193,7 @@
                 <div class="document_main">
                     <?php 
                         $sql_recent="SELECT d.* ,s.name as 'ten_mon', u.name as 'ten_user' FROM subjects s JOIN documents d ON s.id = d.subject_id JOIN users u ON d.user_id = u.id
-                        where s.id =3 ORDER BY download_count DESC LIMIT 4;";
+                        where s.id =3 ORDER BY download_count DESC LIMIT 4 OFFSET $offset;";
                         $result_recent= mysqli_query($conn,$sql_recent);
                         while($row_recent= mysqli_fetch_array($result_recent)){
                     ?>
@@ -218,15 +215,23 @@
                     </a>
                     <?php } ?>
                 </div>
-                <!-- <div class="pagination">
-                    <a class="page_prev">« Prev</a>
-                    <a class="page_number">1</a>
-                    <a class="page_number">2</a>
-                    <a class="page_number">3</a>
-                    <a class="page_number">4</a>
-                    <a class="page_number">5</a>
-                    <a class="page_next">Next »</a>
-                </div> -->
+                <div class="pagination">
+                    <?php 
+                        $sql_page= "SELECT COUNT(id) as 'count' FROM documents WHERE subject_id=3;";
+                        $result_page = mysqli_query($conn,$sql_page);
+                        $count= mysqli_fetch_assoc($result_page);
+                        $page_total= ceil($count['count'] / 4); 
+                        $page_layout= $_GET["page_layout"];
+                    ?>
+                     <?php if ($page > 1){ ?>
+                        <a class="page_prev" href="?page_layout=<?php echo $page_layout ?>&page=<?php echo $page - 1 ?>">« Prev</a>
+                    <?php } ?>
+                    <a class="page_number"><?php echo $page ?></a>
+                    <?php if ($page < $page_total){ 
+                    ?>
+                        <a class="page_next" href="?page_layout=<?php echo $page_layout ?>&page=<?php echo $page + 1 ?>">Next »</a>
+                    <?php } ?>
+                </div>
             </div>
         </div>       
     </div>

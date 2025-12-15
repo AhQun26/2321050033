@@ -216,6 +216,16 @@
     </script>
 <?php 
     include('db.php');
+
+    if(!isset($_GET['page'])){
+        $page=1; 
+    } 
+   else{
+        $page =$_GET['page'];
+    }
+    $offset = ($page - 1) * 4;
+
+    
     if(isset($_GET['page_layout'])){
     switch ($_GET["page_layout"]){
         case 0:
